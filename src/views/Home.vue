@@ -1,18 +1,77 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div class="home">
+  <section class="hero is-dark">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Strzelnica          
+        </h1>
+        <h2 class="subtitle">
+          Zarejestruj się by zarezerwować tor
+        </h2>
+        <div class="button-block">
+  <button v-if="!$auth.isAuthenticated" @click="login" class="button is-xl is-dark">Zarejestruj się</button>
+  <h3 v-if="$auth.isAuthenticated" class="is-size-3 has-background-dark welcome">Witaj, {{ $auth.user.name }}!</h3>
+</div>
+      </div>
+    </div>
+  </section>
+  <EventsList />
+</div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import EventsList from '../components/EventsList';
 export default {
-  name: 'Home',
+  name: 'home',
   components: {
-    HelloWorld
+    EventsList
+  },
+  methods: {
+    // Log the user in
+    login() {
+      this.$auth.loginWithRedirect();
+    }
   }
 }
 </script>
+<style lang="scss" scoped>
+  .hero {    
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1577905027671-c5cc33c825ed?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+  }
+  .hero-body .title {
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+    padding: 40px 0 20px 0;
+    font-size: 60px;
+  }
+  .subtitle {
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
+    font-size: 30px;
+  }
+  .button-block {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: absolute;
+    bottom: -150px;
+    .button {
+      margin-right: 50px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .welcome {
+      width: 400px;
+      padding: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .is-xl {
+    font-size: 1.7rem;
+  }
+</style>
