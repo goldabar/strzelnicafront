@@ -37,20 +37,22 @@ export default {
 <style lang="scss" scoped>
   .hero {    
     text-align: center;
-    background-image: url('https://images.unsplash.com/photo-1577905027671-c5cc33c825ed?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-image: url('https://center-a.com/assets/media/glavnaya-1_banner.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 500px;
   }
   .hero-body .title {
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
     padding: 40px 0 20px 0;
-    font-size: 60px;
+    font-size: 90px;
+    opacity: 1;
   }
   .subtitle {
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
-    font-size: 30px;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
+    font-size: 50px;
+    opacity: 1;
   }
   .button-block {
     text-align: center;

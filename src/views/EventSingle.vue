@@ -6,10 +6,11 @@
           <h1 class="title">
             {{ event.name }}
           </h1>
+          <date-picker placeholder="Wybierz datę" format="DD-MM-YYYY HH:mm" :time-picker-options="{start: '08:00', step:'00:60', end: '21:00'}" v-model="time2" type="datetime"></date-picker>
           <h2 class="subtitle ">
-            <strong>Data:</strong> {{ event.date }}
+            <strong v-if="time2 !== null">Data rezrwacji:</strong> {{time2}}
             <br>
-            <strong>Godzina:</strong> {{ event.time }}
+           <!-- <strong>Godzina:</strong> {{ event.time }} -->
           </h2>
         </div>
       </div>
@@ -29,10 +30,19 @@
   </div>
 </template>
 <script>
+import DatePicker from 'vue2-datepicker';
+import 'vue2-datepicker/index.css';
 export default {
+  components: {
+    DatePicker
+  },
   name: 'EventSingle',
   data () {
     return {
+      time2: null,
+      disabledDates: {
+        
+      },
       events: [
         {
           id: 1,
@@ -65,9 +75,9 @@ export default {
           name: 'Tor 3',
           category: 'Broń miotająca',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quia aperiam eligendi dolorum reprehenderit ea amet, aliquid dolorem beatae, iste aliquam ullam. Sequi ab eligendi consectetur neque laudantium, libero asperiores.',
-          featuredImage: 'https://lh3.googleusercontent.com/proxy/Y8kW_vj08seg7-FG_ZDGanK1J1fMsxvN9WkUx6lVekP0Ut3xme1OIjoGTFlCDmT260FQfhZkw8xCBzxfdsSn6dnBtD1aH6r3iIZh3iaSsQ',
+          featuredImage: 'https://media-cdn.tripadvisor.com/media/photo-s/14/c3/64/9c/4444.jpg',
           images: [
-            'https://lh3.googleusercontent.com/proxy/Y8kW_vj08seg7-FG_ZDGanK1J1fMsxvN9WkUx6lVekP0Ut3xme1OIjoGTFlCDmT260FQfhZkw8xCBzxfdsSn6dnBtD1aH6r3iIZh3iaSsQ'
+            'https://media-cdn.tripadvisor.com/media/photo-s/14/c3/64/9c/4444.jpg'
           ],
           location: 'ul. Szkolna 17, Warszawa',
           date: '11-21-2020',
