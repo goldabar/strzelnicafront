@@ -7,9 +7,9 @@
             {{ event.name }}
           </h1>
           <h2 class="subtitle ">
-            <strong>Date:</strong> {{ event.date }}
+            <strong>Data:</strong> {{ event.date }}
             <br>
-            <strong>Time:</strong> {{ event.time }}
+            <strong>Godzina:</strong> {{ event.time }}
           </h2>
         </div>
       </div>
@@ -17,8 +17,8 @@
     <section class="event-content">
       <div class="container">
         <p class="is-size-4 description">{{ event.description }}</p>
-        <p class="is-size-5"><strong>Location:</strong> {{ event.location }}</p>
-        <p class="is-size-5"><strong>Category:</strong> {{ event.category }}</p>
+        <p class="is-size-5"><strong>Lokacja:</strong> {{ event.location }}</p>
+        <p class="is-size-5"><strong>Kategoria:</strong> {{ event.category }}</p>
         <div class="event-images columns is-multiline has-text-centered">
           <div v-for="image in event.images" :key="image.id" class="column is-one-third">
             <img :src="image" :alt="event.name">
@@ -43,7 +43,7 @@ export default {
           images: [
             'https://images.unsplash.com/photo-1577905027788-c9fc420bbad9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
           ],
-          location: '1234 Fancy Ave',
+          location: 'ul. Szkolna 17, Warszawa',
           date: '12-25-2020',
           time: '11:30'
         },
@@ -56,7 +56,7 @@ export default {
           images: [
             'https://wearememphis.com/wp-content/uploads/2019/05/920x920.jpg'
           ],
-          location: '1234 Dog Alley',
+          location: 'ul. Szkolna 17, Warszawa',
           date: '11-21-2020',
           time: '12:00'
         },
@@ -69,7 +69,7 @@ export default {
           images: [
             'https://lh3.googleusercontent.com/proxy/Y8kW_vj08seg7-FG_ZDGanK1J1fMsxvN9WkUx6lVekP0Ut3xme1OIjoGTFlCDmT260FQfhZkw8xCBzxfdsSn6dnBtD1aH6r3iIZh3iaSsQ'
           ],
-          location: '1234 Dog Alley',
+          location: 'ul. Szkolna 17, Warszawa',
           date: '11-21-2020',
           time: '12:00'
         },
@@ -82,7 +82,7 @@ export default {
           images: [
             'https://g8.gazetaprawna.pl/p/_wspolne/pliki/3255000/3255015-strzelnica-pistolet.jpg'
           ],
-          location: '1234 Dog Alley',
+          location: 'ul. Szkolna 17, Warszawa',
           date: '11-21-2020',
           time: '12:00'
         }
